@@ -3,13 +3,14 @@ import { makeStyles, Typography, Box } from "@material-ui/core";
 import Switch from "@material-ui/core/Switch";
 import { useState } from "react";
 import { toggleAction } from "../../Redux-Toolkit/buttonSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import DrawerComponent from "../drawerComponent";
+
 const Header = () => {
   const [mode, setMode] = useState(false);
   const dispatch = useDispatch();
@@ -49,7 +50,6 @@ const Header = () => {
             ) : (
               <Box className={classes.right_nav}>
                 <a href="#">
-                  {" "}
                   <IconButton className={classes.nav_icon}>
                     <NotificationsIcon />
                   </IconButton>
@@ -57,10 +57,7 @@ const Header = () => {
 
                 <Box className={classes.admin_nav}>
                   <a href="#">
-                    {" "}
-                    <Typography className={classes.nav_icon}>
-                      Admin
-                    </Typography>{" "}
+                    <Typography className={classes.nav_icon}>Admin</Typography>{" "}
                   </a>
                   <a href="#">
                     <IconButton className={classes.nav_icon}>

@@ -1,15 +1,18 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
+/**
+ * @dev Wrapper is container with holds data
+ * @props Children takes only
 
-const Wrapper = ({ childern }) => {
+ */
+const Wrapper = ({ children }) => {
   const classes = useStyles();
-  return <div className={classes.wraped}>{childern}</div>;
+  return <div className={classes.wraped}>{children}</div>;
 };
 
 export default Wrapper;
 const useStyles = makeStyles((theme) => ({
   wraped: {
-    marginLeft: "300px",
     padding: "20px",
     margin: "20px",
   },
