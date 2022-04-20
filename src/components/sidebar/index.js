@@ -8,8 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -44,9 +42,9 @@ export default function MiniDrawer() {
         }}
       >
         <div className={classes.toolbar}>
-          <h1>Dashboard</h1>
-          <IconButton onClick={handleDrawerOpen}>
-            {theme.direction === "rtl" ? null : <MenuIcon />}
+          <Typography style={{ fontSize: "20px" }}>Dashboard</Typography>
+          <IconButton onClick={handleDrawerOpen} className={classes.btnMagic}>
+            <MenuIcon />
           </IconButton>
         </div>
         <Divider />
@@ -75,6 +73,11 @@ export default function MiniDrawer() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    height: "100vh",
+  },
+  btnMagic: {
+    paddingLeft: "36px",
+    paddingRight: "31px",
   },
   appBar: {
     transition: theme.transitions.create(["width", "margin"], {
@@ -102,6 +105,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
   },
   drawerOpen: {
+    position: "relative",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -109,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   drawerClose: {
+    position: "relative",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -123,9 +128,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
   },
   content: {
     flexGrow: 1,
