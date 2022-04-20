@@ -15,7 +15,6 @@ const Header = () => {
   return (
     <div className={classes.head}>
       <Switch onClick={handleChange} />
-      <Typography variant="h1">Hello world</Typography>
     </div>
   );
 };
