@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import { ThemeProvider, createTheme } from "@material-ui/core";
+import Switch from "@material-ui/core/Switch";
+import Routing from "./router";
+import "./App.css";
 function App() {
+  const [mode, setMode] = useState(true);
+  const theme = createTheme({
+    palette: {
+      color: {
+        main: mode ? "black" : "white",
+      },
+      backgroundColor: {
+        main: mode ? "white" : "black",
+      },
+    },
+    typography: {
+      fontFamily: "Ubuntu",
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Routing />
+      <Switch
+        checked={mode}
+        onChange={() => {
+          setMode(!mode);
+        }}
+      />
+    </ThemeProvider>
   );
 }
 
 export default App;
+// const dark = createTheme({
+//   palette: {
+//     color: "white",
+//     backgroundColor: "black",
+//   },
+// });
+// const light = createTheme({
+//   palette: {
+//     color: "black",
+//     backgroundColor: "white",
+//   },
+// });
