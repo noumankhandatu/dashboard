@@ -31,7 +31,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className={classes.head}>
+      <Box className={classes.head}>
         <Box className={classes.navbar}>
           <Box className={classes.logo}>
             <Typography variant="h1">Logo</Typography>
@@ -79,7 +79,7 @@ const Header = () => {
           </Box>
         </Box>
         {/* <Typography variant="h1">Hello world</Typography> */}
-      </div>
+      </Box>
     </>
   );
 };
