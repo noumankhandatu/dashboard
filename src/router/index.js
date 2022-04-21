@@ -10,6 +10,7 @@ const Routing = () => {
       <Routes>
         <Route path="/" exact element={<Dashboard />} />
       </Routes>
+
       <Footer />
     </Router>
   );
