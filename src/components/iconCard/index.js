@@ -13,9 +13,7 @@ const IconCard = ({ text, count, icon }) => {
     <Box pt={3}>
       <Paper className={classes.paper}>
         <Box p={2} display="flex" alignItems="center">
-          <Box className={classes.bgIcon}>
-            <img src={icon} alt="" className={classes.iconSize} />
-          </Box>
+          <img src={icon} alt="" className={classes.iconSize} />
           <Box pl={3}>
             <div>
               <Box>
@@ -37,14 +35,10 @@ const IconCard = ({ text, count, icon }) => {
 export default IconCard;
 const useStyles = makeStyles((theme) => ({
   iconSize: {
-    width: "45px",
-    height: "45px",
+    width: "60px",
+    height: "60px",
   },
-  bgIcon: {
-    padding: "10px",
-    background: theme.palette.icon.primary,
-    borderRadius: "10px",
-  },
+
   paper: {
     color: theme.palette.color.primary,
     backgroundColor: theme.palette.backgroundColor.main,
