@@ -39,7 +39,13 @@ const Dashboard = () => {
         </Box>
         <div className={classes.grid}>
           {Array.map((items) => {
-            return <IconCard />;
+            return (
+              <IconCard
+                count={items.count}
+                text={items.text}
+                icon={items.icon}
+              />
+            );
           })}
         </div>
         <br />
