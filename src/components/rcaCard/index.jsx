@@ -1,15 +1,24 @@
-import React from "react";
-import { Box, Button, Typography } from "@material-ui/core";
+import React, { useState } from "react";
+import { Box, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import Data from "./items";
+import Button from "../buttons/index";
 
 const RacCard = () => {
   const classes = useStyles();
+  const [load, setLoad] = useState(2);
+  const length = Data.length;
+  const showMoreItems = () => {
+    setLoad(length);
+  };
+  const showLessItems = () => {
+    setLoad(2);
+  };
   return (
     <Box className={classes.mainContainer}>
       <Box className={classes.headerContainer}>
         <Typography variant="h3">RCAS</Typography>
-        <Button>add</Button>
+        <Button variant="inline">add</Button>
       </Box>
       <Box className={classes.racCardTitles}>
         <Typography variant="h6" className={classes.racTitle}></Typography>
@@ -32,8 +41,8 @@ const RacCard = () => {
           action
         </Typography>
       </Box>
-
-      {Data.map(
+      <Divider />
+      {Data.slice(0, load).map(
         ({
           title,
           description,
@@ -64,7 +73,7 @@ const RacCard = () => {
                   {price}
                 </Typography>
                 <Box variant="h6">
-                  <Button className={classes.id}>View</Button>
+                  <Button variant="outlined">View</Button>
                 </Box>
               </Box>
               {divider}
@@ -72,6 +81,17 @@ const RacCard = () => {
           );
         }
       )}
+      <Box className={classes.viewBtnBox}>
+        {load <= 2 ? (
+          <Button className={classes.id} onClick={showMoreItems}>
+            View all
+          </Button>
+        ) : (
+          <Button className={classes.id} onClick={showLessItems}>
+            View less
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 };
@@ -98,6 +118,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     color: theme.palette.color.secondary,
   },
+  button: {
+    fontSize: "15px",
+    fontWeight: "400",
+    color: theme.palette.color.alpha,
+  },
   racCardTitles: {
     display: "grid",
     gridTemplateColumns: "0.3fr 1fr 2fr 1fr 1fr 1fr 1fr",
@@ -106,5 +131,9 @@ const useStyles = makeStyles((theme) => ({
 
   innnerContainer: {
     display: "flex",
+  },
+  viewBtnBox: {
+    display: "flex",
+    justifyContent: "center",
   },
 }));

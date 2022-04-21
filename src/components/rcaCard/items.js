@@ -21,5 +21,145 @@ const Data = [
     price: "01",
     divider: <Divider />,
   },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
+  {
+    id: "02",
+    title: "Lorem Ipsum",
+    description:
+      "is simply dummy text of the printing and typesetting industry.  ",
+    category: "01",
+    image: img,
+    price: "01",
+    divider: <Divider />,
+  },
 ];
 export default Data;
