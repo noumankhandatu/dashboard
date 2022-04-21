@@ -1,3 +1,5 @@
+import { Button, Divider } from "@material-ui/core";
+import img from "../../assets/Ellipse 4.png";
 const Data = [
   {
     id: "01",
@@ -5,8 +7,9 @@ const Data = [
     description:
       "is simply dummy text of the printing and typesetting industry.  ",
     category: "01",
-    image: "",
+    image: img,
     price: "01",
+    divider: <Divider />,
   },
   {
     id: "02",
@@ -14,8 +17,9 @@ const Data = [
     description:
       "is simply dummy text of the printing and typesetting industry.  ",
     category: "01",
-    image: "",
+    image: img,
     price: "01",
+    divider: <Divider />,
   },
 ];
 export default Data;

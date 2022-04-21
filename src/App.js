@@ -14,6 +14,8 @@ function App() {
       },
       backgroundColor: {
         main: mode ? "#FFFFFF" : "#000000",
+        iconbg1: mode ? "#21A365" : "#000000",
+        iconbg2: mode ? "#F12B2C" : "#000000",
       },
       icon: {
         main: mode ? "#FFE9D" : "#FFFFFF",
@@ -25,6 +27,7 @@ function App() {
         hexa: mode ? "#FFE2E4" : "#FFFFFF",
       },
     },
+
     typography: {
       fontFamily: "Inter",
       h1: {
@@ -40,6 +43,9 @@ function App() {
         fontWeight: 700,
       },
     },
+    border: {
+      main: mode ? "#DFE0EB" : "#FFFFFF",
+    },
   });
 
   return (
@@ -50,15 +56,3 @@ function App() {
 }
 
 export default App;
-// const dark = createTheme({
-//   palette: {
-//     color: "white",
-//     backgroundColor: "black",
-//   },
-// });
-// const light = createTheme({
-//   palette: {
-//     color: "black",
-//     backgroundColor: "white",
-//   },
-// });
