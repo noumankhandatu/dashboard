@@ -30,7 +30,7 @@ export default withStyles((theme) => ({
     borderRadius: "50px",
     color: theme.palette.color.alpha,
     background: theme.palette.backgroundColor.iconbg2,
-    width: "67px",
+    width: "90px",
     height: "37px",
     "&:hover": {
       backgroundColor: alpha(theme.palette.backgroundColor.iconbg2, 0.9),
