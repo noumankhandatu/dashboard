@@ -13,7 +13,8 @@ const Wrapper = ({ children }) => {
 export default Wrapper;
 const useStyles = makeStyles((theme) => ({
   wraped: {
-    padding: "20px",
-    margin: "20px",
+    paddingLeft: "20px",
+    paddingTop: "3px",
+    marginLeft: "20px",
   },
 }));
