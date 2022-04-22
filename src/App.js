@@ -61,15 +61,3 @@ function App() {
 }
 
 export default App;
-// const dark = createTheme({
-//   palette: {
-//     color: "white",
-//     backgroundColor: "black",
-//   },
-// });
-// const light = createTheme({
-//   palette: {
-//     color: "black",
-//     backgroundColor: "white",
-//   },
-// });
