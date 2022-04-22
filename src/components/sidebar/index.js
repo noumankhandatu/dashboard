@@ -9,11 +9,8 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-
+import SideBarArray from "../arrays/sidebararray";
+import { Box } from "@material-ui/core";
 const drawerWidth = 240;
 
 export default function MiniDrawer() {
@@ -48,22 +45,23 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {[
-            "Inbox",
-            "Starred",
-            "Send email",
-            "Drafts",
-            "All mail",
-            "Trash",
-            "Spam",
-          ].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {SideBarArray.map((items) => {
+            return (
+              <Box display="flex" alignItems="center">
+                <ListItem button>
+                  <Box pl={0.4}>
+                    <img src={items.icon} style={{ width: "28px" }} alt="" />
+                  </Box>
+                  <Typography
+                    variant="h2"
+                    style={{ textTransform: "capitalize" }}
+                  >
+                    <Box pl={3}> {items.text}</Box>
+                  </Typography>
+                </ListItem>
+              </Box>
+            );
+          })}
         </List>
       </Drawer>
     </div>
@@ -72,10 +70,10 @@ export default function MiniDrawer() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    height: "100vh",
+    height: "70vh",
   },
   btnMagic: {
-    color: theme.palette.color.main,
+    color: theme.palette.color.wolf,
     backgroundColor: theme.palette.backgroundColor.primary,
     paddingLeft: "36px",
     paddingRight: "31px",
@@ -106,6 +104,8 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
   },
   drawerOpen: {
+    color: theme.palette.color.wolf,
+    backgroundColor: theme.palette.backgroundColor.primary,
     position: "relative",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
@@ -114,6 +114,8 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   drawerClose: {
+    color: theme.palette.color.wolf,
+    backgroundColor: theme.palette.backgroundColor.primary,
     position: "relative",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -127,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    color: theme.palette.color.main,
+    color: theme.palette.color.wolf,
     backgroundColor: theme.palette.backgroundColor.primary,
     alignItems: "center",
     justifyContent: "flex-end",

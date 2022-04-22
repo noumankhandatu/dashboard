@@ -86,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.color.main,
     backgroundColor: theme.palette.backgroundColor.main,
   },
-
   navbar: {
     display: "flex",
     justifyContent: "space-between",
