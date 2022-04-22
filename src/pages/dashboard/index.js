@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core";
 const Dashboard = () => {
   const classes = useStyles();
   return (
-    <Box display="flex" pt={3} className={classes.bgColor}>
+    <Box display="flex" pt={5} className={classes.bgColor}>
       <MiniDrawer />
       <Wrapper>
         <Box display="flex" justifyContent="space-between">
