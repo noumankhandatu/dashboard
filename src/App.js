@@ -42,9 +42,14 @@ function App() {
         fontSize: "14px",
         fontWeight: 700,
       },
+      h4: {
+        fontSize: "15px",
+        fontWeight: 500,
+      },
     },
     border: {
       main: mode ? "#DFE0EB" : "#FFFFFF",
+      default: mode ? "#F1F1F1" : "#FFFFFF",
     },
   });
 
