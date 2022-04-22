@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Box, Typography, Divider } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { makeStyles } from "@material-ui/styles";
 import Data from "./items";
 import Button from "../buttons/index";
+import RacOptionsBtn from "./racOptionsBtn";
 
 const RacCard = () => {
   const classes = useStyles();
@@ -14,11 +17,18 @@ const RacCard = () => {
   const showLessItems = () => {
     setLoad(2);
   };
+
   return (
     <Box className={classes.mainContainer}>
       <Box className={classes.headerContainer}>
         <Typography variant="h3">RCAS</Typography>
-        <Button variant="inline">add</Button>
+        <Button
+          className={classes.addBtn}
+          variant="outlined"
+          endIcon={<AddIcon />}
+        >
+          Add
+        </Button>
       </Box>
       <Box className={classes.racCardTitles}>
         <Typography variant="h6" className={classes.racTitle}></Typography>
@@ -68,12 +78,17 @@ const RacCard = () => {
                 <Typography variant="h6" className={classes.id}>
                   {category}
                 </Typography>
-                <img src={image} alt="" />
+                <Box className={classes.id}>
+                  <img src={image} alt="" />
+                </Box>
                 <Typography variant="h6" className={classes.id}>
                   {price}
                 </Typography>
-                <Box variant="h6">
-                  <Button variant="outlined">View</Button>
+                <Box className={classes.id} variant="h6">
+                  <Button className={classes.button} variant="outlined">
+                    View
+                  </Button>
+                  <RacOptionsBtn />
                 </Box>
               </Box>
               {divider}
@@ -83,11 +98,21 @@ const RacCard = () => {
       )}
       <Box className={classes.viewBtnBox}>
         {load <= 2 ? (
-          <Button className={classes.id} onClick={showMoreItems}>
+          <Button
+            variant="outlined"
+            className={classes.viewBtn}
+            onClick={showMoreItems}
+            endIcon={<ArrowForwardIcon style={{ fontSize: "16px" }} />}
+          >
             View all
           </Button>
         ) : (
-          <Button className={classes.id} onClick={showLessItems}>
+          <Button
+            variant="outlined"
+            className={classes.viewBtn}
+            onClick={showLessItems}
+            endIcon={<ArrowForwardIcon style={{ fontSize: "16px" }} />}
+          >
             View less
           </Button>
         )}
@@ -98,17 +123,23 @@ const RacCard = () => {
 export default RacCard;
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
+    width: "100%",
     color: theme.palette.color.main,
     backgroundColor: theme.palette.backgroundColor.main,
     border: "1px solid #DFE0EB",
     boxSizing: "border-box",
     borderRadius: "8px",
     padding: "17px",
+
+    [theme.breakpoints.down("sm")]: {
+      overflowX: "scroll",
+    },
   },
   headerContainer: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    padding: "0 55px",
   },
   racTitle: {
     fontSize: "15px",
@@ -117,16 +148,47 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "15px",
     fontWeight: "400",
     color: theme.palette.color.secondary,
+    display: "flex",
+
+    alignItems: "center",
   },
   button: {
-    fontSize: "15px",
+    fontSize: "11px",
+    height: "27px",
+    width: "67px",
     fontWeight: "400",
-    color: theme.palette.color.alpha,
+    color: "white",
+    backgroundColor: "#21A365",
+    "&:hover": {
+      backgroundColor: "#21A365",
+    },
+  },
+  addBtn: {
+    display: "felx",
+    alignItems: "center",
+    textTransform: "none",
+    backgroundColor: "#0660FE",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#0660FE",
+    },
+  },
+  viewBtn: {
+    width: "150px",
+    height: "27px",
+    fontSize: "13px",
+    backgroundColor: "#CFEEFF",
+    color: "black",
+    marginTop: "55px",
+    "&:hover": {
+      backgroundColor: "#CFEEFF",
+    },
   },
   racCardTitles: {
     display: "grid",
-    gridTemplateColumns: "0.3fr 1fr 2fr 1fr 1fr 1fr 1fr",
+    gridTemplateColumns: "0.2fr 0.7fr 2fr 0.5fr 0.5fr 0.3fr 0.9fr",
     margin: "15px 0",
+    gridGap: "10px",
   },
 
   innnerContainer: {
