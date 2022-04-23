@@ -18,7 +18,7 @@ export default function BasicTable({
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer className={classes.main} component={Paper}>
       <Box className={classes.tableHeading}>{tableName}</Box>
       <Table className={classes.table} aria-label="simple table">
         <TableHead className="tablehead">
@@ -30,6 +30,9 @@ export default function BasicTable({
   );
 }
 const useStyles = makeStyles((theme) => ({
+  main: {
+    backgroundColor: theme.palette.backgroundColor.bgtab,
+  },
   table: {
     width: "100%",
     [theme.breakpoints.down("md")]: {
