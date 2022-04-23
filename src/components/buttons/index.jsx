@@ -14,8 +14,7 @@ export default withStyles((theme) => ({
     fontsize: 11,
   },
 
-  outlined: {
-    padding: " 20px 30px",
+  outline: {
     color: theme.palette.color.alpha,
     background: theme.palette.backgroundColor.iconbg1,
     width: "90px",
@@ -26,7 +25,7 @@ export default withStyles((theme) => ({
     },
   },
 
-  contained: {
+  contain: {
     borderRadius: "50px",
     color: theme.palette.color.alpha,
     background: theme.palette.backgroundColor.iconbg2,
