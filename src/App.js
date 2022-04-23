@@ -11,12 +11,14 @@ function App() {
         primary: mode ? "#4C4C4C" : "#FFFFFF",
         secondary: mode ? "#9FA2B4" : "#FFFFFF",
         alpha: mode ? "#FFFFFF" : "#000000",
+        wolf: mode ? "#FFFFFF" : "#FFFFFF",
       },
       backgroundColor: {
         main: mode ? "#FFFFFF" : "#222338",
         primary: mode ? "#319CFF" : "#222338",
         iconbg1: mode ? "#21A365" : "#000000",
         iconbg2: mode ? "#F12B2C" : "#000000",
+        bgColor: mode ? "#FFFFF" : "#1B1C31",
       },
       icon: {
         main: mode ? "#FFE9D" : "#FFFFFF",

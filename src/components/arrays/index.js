@@ -12,32 +12,32 @@ const Array = [
     icon: order,
   },
   {
-    text: "RCAS",
+    text: "Rca's",
     count: 1,
     icon: rca,
   },
   {
-    text: "NFT IMAGES",
+    text: "Nft Images",
     count: 23,
     icon: nft,
   },
   {
-    text: "FEATURE ARTWORK",
+    text: "Feature Artwork",
     count: 12,
     icon: feature,
   },
   {
-    text: "TRENDING COLLECTIONS",
+    text: "Treding Collections",
     count: 10,
     icon: trend,
   },
   {
-    text: "HOT COLLECTIONS",
+    text: "Hot Collections",
     count: 30,
     icon: hot,
   },
   {
-    text: "LIVE AUCTION",
+    text: "Live Auction",
     count: 11,
     icon: live,
   },

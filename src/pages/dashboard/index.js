@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core";
 const Dashboard = () => {
   const classes = useStyles();
   return (
-    <Box display="flex" pt={3}>
+    <Box display="flex" pt={5} className={classes.bgColor}>
       <MiniDrawer />
       <Wrapper>
         <Box display="flex" justifyContent="space-between">
@@ -43,5 +43,12 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     gridGap: "10px",
+    [theme.breakpoints.down("md")]: {
+      gridTemplateColumns: "1fr",
+    },
+  },
+  bgColor: {
+    height: "100vh",
+    backgroundColor: theme.palette.backgroundColor.bgColor,
   },
 }));

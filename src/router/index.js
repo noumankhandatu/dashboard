@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "../components/footer";
 import Header from "../components/header";
 import HotCollection from "../components/hotCollectionSection";
 
@@ -13,7 +12,6 @@ const Routing = () => {
         <Route path="/" exact element={<Dashboard />} />
         <Route path="/rca" exact element={<HotCollection />} />
       </Routes>
-      <Footer />
     </Router>
   );
 };
