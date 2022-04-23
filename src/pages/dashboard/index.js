@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import MiniDrawer from "../../components/sidebar";
 import Wrapper from "../../components/wrapper";
 import AssessmentIcon from "@material-ui/icons/Assessment";
