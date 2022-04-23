@@ -1,126 +1,47 @@
-import React, { useState } from "react";
-import { Box, Typography, Divider } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import { makeStyles } from "@material-ui/styles";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 import Data from "./items";
-import Button from "../buttons/index";
-import RacOptionsBtn from "./racOptionsBtn";
 
-const RacCard = () => {
+export default function BasicTable() {
   const classes = useStyles();
-  const [load, setLoad] = useState(2);
-  const length = Data.length;
-  const showMoreItems = () => {
-    setLoad(length);
-  };
-  const showLessItems = () => {
-    setLoad(2);
-  };
 
   return (
-    <Box className={classes.mainContainer}>
-      <Box className={classes.headerContainer}>
-        <Typography variant="h3">RCAS</Typography>
-        <Button
-          className={classes.addBtn}
-          variant="outlined"
-          endIcon={<AddIcon />}
-        >
-          Add
-        </Button>
-      </Box>
-      <Box className={classes.racCardTitles}>
-        <Typography variant="h6" className={classes.racTitle}></Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          tiltle
-        </Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          description
-        </Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          category
-        </Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          image
-        </Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          price
-        </Typography>
-        <Typography variant="h6" className={classes.racTitle}>
-          action
-        </Typography>
-      </Box>
-      <Divider />
-      {Data.slice(0, load).map(
-        ({
-          title,
-          description,
-          image,
-          price,
-          category,
-          id,
-
-          divider,
-        }) => {
-          return (
-            <>
-              <Box className={classes.racCardTitles}>
-                <Typography variant="h6" className={classes.id}>
-                  {id}
-                </Typography>
-                <Typography variant="h6" className={classes.id}>
-                  {title}
-                </Typography>
-                <Typography variant="h6" className={classes.id}>
-                  {description}
-                </Typography>
-                <Typography variant="h6" className={classes.id}>
-                  {category}
-                </Typography>
-                <Box className={classes.id}>
-                  <img src={image} alt="" />
-                </Box>
-                <Typography variant="h6" className={classes.id}>
-                  {price}
-                </Typography>
-                <Box className={classes.id} variant="h6">
-                  <Button className={classes.button} variant="outlined">
-                    View
-                  </Button>
-                  <RacOptionsBtn />
-                </Box>
-              </Box>
-              {divider}
-            </>
-          );
-        }
-      )}
-      <Box className={classes.viewBtnBox}>
-        {load <= 2 ? (
-          <Button
-            variant="outlined"
-            className={classes.viewBtn}
-            onClick={showMoreItems}
-            endIcon={<ArrowForwardIcon style={{ fontSize: "16px" }} />}
-          >
-            View all
-          </Button>
-        ) : (
-          <Button
-            variant="outlined"
-            className={classes.viewBtn}
-            onClick={showLessItems}
-            endIcon={<ArrowForwardIcon style={{ fontSize: "16px" }} />}
-          >
-            View less
-          </Button>
-        )}
-      </Box>
-    </Box>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>tiltle</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {Data.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
-};
-export default RacCard;
+}
+
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     width: "100%",
@@ -130,10 +51,9 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: "border-box",
     borderRadius: "8px",
     padding: "17px",
+    overflowX: "scroll",
 
-    [theme.breakpoints.down("sm")]: {
-      overflowX: "scroll",
-    },
+    [theme.breakpoints.down("sm")]: {},
   },
   headerContainer: {
     display: "flex",
