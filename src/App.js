@@ -13,7 +13,8 @@ function App() {
         alpha: mode ? "#FFFFFF" : "#000000",
       },
       backgroundColor: {
-        main: mode ? "#FFFFFF" : "#000000",
+        main: mode ? "#FFFFFF" : "#222338",
+        primary: mode ? "#319CFF" : "#222338",
         iconbg1: mode ? "#21A365" : "#000000",
         iconbg2: mode ? "#F12B2C" : "#000000",
       },

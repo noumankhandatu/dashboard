@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   btnMagic: {
+    color: theme.palette.color.main,
+    backgroundColor: theme.palette.backgroundColor.primary,
     paddingLeft: "36px",
     paddingRight: "31px",
   },
@@ -125,6 +127,8 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
+    color: theme.palette.color.main,
+    backgroundColor: theme.palette.backgroundColor.primary,
     alignItems: "center",
     justifyContent: "flex-end",
   },
