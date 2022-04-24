@@ -10,7 +10,7 @@ const columns = [
   "art price",
   "image",
   "creator name",
-  "sequence",
+
   "action",
 ];
 
@@ -22,11 +22,10 @@ const clients = [
   "0.513ETH",
   { type: "img", src: pic },
   " helloo",
-  "sauna",
 ];
 const rows = [clients, clients, clients, clients, clients];
 
-const HotCollection = () => {
+const ManageNft = () => {
   const classes = useStyles();
   const head = columns.map((col, id) => (
     <TableCell key={id} className={classes.col}>
@@ -54,9 +53,9 @@ const HotCollection = () => {
       </TableCell>
     </TableRow>
   ));
-  return <BasicTable tableName="Hot Collections" head={head} body={body} />;
+  return <BasicTable tableName="manage nfts" head={head} body={body} />;
 };
-export default HotCollection;
+export default ManageNft;
 const useStyles = makeStyles((theme) => ({
   textcell: {
     color: theme.palette.color.secondary,

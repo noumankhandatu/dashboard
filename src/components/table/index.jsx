@@ -9,6 +9,7 @@ import {
   Paper,
   Box,
 } from "@material-ui/core";
+import PaginationRounded from "../Pagination";
 
 export default function BasicTable({
   tableName = null,
@@ -26,12 +27,22 @@ export default function BasicTable({
         </TableHead>
         <TableBody className={classes.textcol}>{body}</TableBody>
       </Table>
+      <Box>
+        {" "}
+        <PaginationRounded />
+      </Box>
     </TableContainer>
   );
 }
 const useStyles = makeStyles((theme) => ({
   main: {
-    backgroundColor: theme.palette.backgroundColor.bgtab,
+    width: "900px",
+    margin: "auto",
+    borderRadius: "8px",
+    backgroundColor: theme.palette.backgroundColor.main,
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
   },
   table: {
     width: "100%",
@@ -54,8 +65,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.color.secondary,
   },
   tableHeading: {
-    padding: "30px  0px 30px 78px",
+    padding: "30px  0px 30px 65px",
     color: theme.palette.color.primary,
+    textTransform: "uppercase",
     fontSize: 15,
     fontWeight: 600,
   },
