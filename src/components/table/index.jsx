@@ -7,24 +7,53 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Box,
 } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
-export default function BasicTable({ head = null, body = null }) {
+export default function BasicTable({
+  tableName = null,
+  head = null,
+  body = null,
+}) {
   const classes = useStyles();
 
   return (
     <TableContainer component={Paper}>
+      <Box className={classes.tableHeading}>{tableName}</Box>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>{head}</TableRow>
+        <TableHead className="tablehead">
+          <TableRow className={classes.textrow}>{head}</TableRow>
         </TableHead>
-        <TableBody>{body}</TableBody>
+        <TableBody className={classes.textcol}>{body}</TableBody>
       </Table>
     </TableContainer>
   );
 }
+const useStyles = makeStyles((theme) => ({
+  table: {
+    width: "100%",
+    [theme.breakpoints.down("md")]: {
+      scrollDirection: "horizontal",
+      // scrollDehavior: "smooth",
+    },
+    "& .tablehead": {
+      color: theme.palette.color.primary,
+    },
+  },
+  textrow: {
+    frontWidth: 500,
+    fonrSize: 15,
+    textTransform: "capitalize",
+    color: theme.palette.color.primary,
+  },
+  textcol: {
+    frontWidth: 400,
+    color: theme.palette.color.secondary,
+  },
+  tableHeading: {
+    padding: "30px  0px 30px 78px",
+    color: theme.palette.color.primary,
+    fontSize: 15,
+    fontWeight: 600,
+  },
+}));

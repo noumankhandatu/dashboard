@@ -1,4 +1,5 @@
 import { TableCell, TableRow } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import Button from "../buttons";
 import BasicTable from "../table";
 const columns = [
@@ -15,28 +16,42 @@ const columns = [
 const clients = [
   "1",
   "RJ Gohar",
-  "Singer RJ Gohar",
+  "  FADEDED",
   "0.513ETH",
-  "Naamo",
-  "Naamo",
-  "Naamo",
+  "bawa g",
+  " helloo",
+  "sauna",
 ];
 const rows = [clients, clients, clients, clients, clients];
 
 const HotCollection = () => {
+  const classes = useStyles();
   const head = columns.map((col) => <TableCell>{col}</TableCell>);
+
   const body = rows.map((row) => (
     <TableRow>
       {row.map((col) => (
-        <TableCell>{col}</TableCell>
+        <TableCell className={classes.textcell}>{col}</TableCell>
       ))}
 
       <TableCell>
-        <Button variant="outline">Preview </Button>{" "}
+        <Button className={classes.btnview} variant="outline">
+          view{" "}
+        </Button>{" "}
         <Button variant="contain">delete</Button>
       </TableCell>
     </TableRow>
   ));
-  return <BasicTable head={head} body={body} />;
+  return <BasicTable tableName="Hot Collections" head={head} body={body} />;
 };
 export default HotCollection;
+const useStyles = makeStyles((theme) => ({
+  textcell: {
+    color: theme.palette.color.secondary,
+  },
+  btnview: {
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 10,
+    },
+  },
+}));
