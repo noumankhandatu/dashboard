@@ -26,7 +26,9 @@ const rows = [clients, clients, clients, clients, clients];
 
 const HotCollection = () => {
   const classes = useStyles();
-  const head = columns.map((col) => <TableCell>{col}</TableCell>);
+  const head = columns.map((col) => (
+    <TableCell className={classes.col}>{col}</TableCell>
+  ));
 
   const body = rows.map((row) => (
     <TableRow>
@@ -48,6 +50,9 @@ export default HotCollection;
 const useStyles = makeStyles((theme) => ({
   textcell: {
     color: theme.palette.color.secondary,
+  },
+  col: {
+    color: theme.palette.color.primary,
   },
   btnview: {
     [theme.breakpoints.down("sm")]: {
