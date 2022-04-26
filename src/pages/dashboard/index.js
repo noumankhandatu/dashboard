@@ -1,6 +1,5 @@
 import React from "react";
-import RacCard from "../../components/rcaCard";
-import { Box, Typography } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import MiniDrawer from "../../components/sidebar";
 import Wrapper from "../../components/wrapper";
 import AssessmentIcon from "@material-ui/icons/Assessment";
@@ -9,7 +8,7 @@ import SearchBar from "../../components/searchbar";
 import IconCard from "../../components/iconCard";
 import Array from "../../components/arrays";
 import { makeStyles } from "@material-ui/core";
-
+import RacCard from "../../components/rcaCard/index";
 const Dashboard = () => {
   const classes = useStyles();
   return (

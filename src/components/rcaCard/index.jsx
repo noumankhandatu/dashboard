@@ -8,34 +8,45 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Data from "./items";
-
+import RacOptionsBtn from "./racOptionsBtn";
 export default function BasicTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className={classes.mainContainer}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
+            <TableCell></TableCell>
             <TableCell>tiltle</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">description</TableCell>
+            <TableCell align="right">category</TableCell>
+            <TableCell align="right">image</TableCell>
+            <TableCell align="right">price</TableCell>
+            <TableCell align="right">action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {Data.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
+          {Data.map(
+            ({ id, title, description, category, image, price, action }) => (
+              <TableRow key={id}>
+                <TableCell align="right">{id}</TableCell>
+                <TableCell component="th" scope="row">
+                  {title}
+                </TableCell>
+
+                <TableCell align="right">{description}</TableCell>
+                <TableCell align="right">{category}</TableCell>
+                <TableCell align="right">
+                  <img src={image} alt="" />
+                </TableCell>
+                <TableCell align="right">{price}</TableCell>
+                <TableCell align="right" className={classes.actionBox}>
+                  <RacOptionsBtn />
+                </TableCell>
+              </TableRow>
+            )
+          )}
         </TableBody>
       </Table>
     </TableContainer>
@@ -44,16 +55,15 @@ export default function BasicTable() {
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    width: "100%",
     color: theme.palette.color.main,
     backgroundColor: theme.palette.backgroundColor.main,
     border: "1px solid #DFE0EB",
-    boxSizing: "border-box",
-    borderRadius: "8px",
-    padding: "17px",
-    overflowX: "scroll",
 
     [theme.breakpoints.down("sm")]: {},
+  },
+  actionBox: {
+    width: "200px",
+    display: "flex",
   },
   headerContainer: {
     display: "flex",
