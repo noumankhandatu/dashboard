@@ -19,7 +19,7 @@ function App() {
         iconbg1: mode ? "#21A365" : "#21A365",
         iconbg2: mode ? "#F12B2C" : "#F12B2C",
         bgColor: mode ? "#FFFFF" : "#1B1C31",
-        bgtab: mode ? "##DFE0EB" : "#222338",
+        bgtab: mode ? "#DFE0EB" : "#222338",
       },
       icon: {
         main: mode ? "#FFE9D" : "#FFFFFF",

@@ -16,7 +16,7 @@ export default withStyles((theme) => ({
   },
 
   outline: {
-    color: theme.palette.color.alpha,
+    color: theme.palette.color.wolf,
     background: theme.palette.backgroundColor.iconbg1,
     width: "70px",
     height: "30px",
@@ -28,7 +28,7 @@ export default withStyles((theme) => ({
 
   contain: {
     borderRadius: "50px",
-    color: theme.palette.color.alpha,
+    color: theme.palette.color.wolf,
     background: theme.palette.backgroundColor.iconbg2,
     width: "70px",
     height: "30px",
@@ -38,7 +38,7 @@ export default withStyles((theme) => ({
   },
   inline: {
     borderRadius: "50px",
-    color: theme.palette.color.main,
+    color: theme.palette.color.wolf,
     backgroundColor: theme.palette.backgroundColor.main,
     height: "35px",
     "&:hover": {

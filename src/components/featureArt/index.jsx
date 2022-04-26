@@ -26,7 +26,7 @@ const clients = [
 ];
 const rows = [clients, clients, clients, clients, clients];
 
-const HotCollection = () => {
+const FeatureArt = () => {
   const classes = useStyles();
   const head = columns.map((col, id) => (
     <TableCell key={id} className={classes.col}>
@@ -54,9 +54,9 @@ const HotCollection = () => {
       </TableCell>
     </TableRow>
   ));
-  return <BasicTable tableName="Hot Collections" head={head} body={body} />;
+  return <BasicTable tableName="Feature Art" head={head} body={body} />;
 };
-export default HotCollection;
+export default FeatureArt;
 const useStyles = makeStyles((theme) => ({
   textcell: {
     color: theme.palette.color.secondary,

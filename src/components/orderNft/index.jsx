@@ -5,28 +5,17 @@ import Button from "../buttons";
 import BasicTable from "../table";
 const columns = [
   "id",
-  " product name",
-  "description",
-  "art price",
-  "image",
-  "creator name",
-  "sequence",
-  "action",
+  " customer name",
+  "total items",
+  ,
+  "created at",
+  "Action",
 ];
 
-const clients = [
-  "1",
-  "holaa",
+const clients = ["1", "holaa", " una nzr asar bila", "0.513ETH"];
+const rows = [clients, clients, clients, clients];
 
-  " una nzr asar bila",
-  "0.513ETH",
-  { type: "img", src: pic },
-  " helloo",
-  "sauna",
-];
-const rows = [clients, clients, clients, clients, clients];
-
-const HotCollection = () => {
+const OrderNft = () => {
   const classes = useStyles();
   const head = columns.map((col, id) => (
     <TableCell key={id} className={classes.col}>
@@ -54,9 +43,9 @@ const HotCollection = () => {
       </TableCell>
     </TableRow>
   ));
-  return <BasicTable tableName="Hot Collections" head={head} body={body} />;
+  return <BasicTable tableName="orders" head={head} body={body} />;
 };
-export default HotCollection;
+export default OrderNft;
 const useStyles = makeStyles((theme) => ({
   textcell: {
     color: theme.palette.color.secondary,
