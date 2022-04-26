@@ -38,7 +38,7 @@ export default withStyles((theme) => ({
   },
   inline: {
     borderRadius: "50px",
-    color: theme.palette.color.wolf,
+    color: theme.palette.color.main,
     backgroundColor: theme.palette.backgroundColor.main,
     height: "35px",
     "&:hover": {
