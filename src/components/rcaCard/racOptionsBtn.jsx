@@ -22,7 +22,7 @@ const RacOptionsBtn = () => {
           <Button className={classes.btn}>Two</Button>
         </ButtonGroup>
       )}
-      <IconButton onClick={handleClick}>
+      <IconButton className={classes.iconButton} onClick={handleClick}>
         <MoreVertIcon />
       </IconButton>
     </Box>
@@ -41,13 +41,19 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "0px",
   },
   btn: {
+    backgroundColor: theme.palette.backgroundColor.main,
     height: "25px",
-    borderRadius: "0px",
-    color: "#4C4C4C",
+    borderColor: theme.palette.color.main,
+    borderRadius: "3px",
+    color: theme.palette.color.main,
+
     fontSize: "11px",
     "&:hover": {
       backgroundColor: "#0FA9FF",
       color: "#FFFFFF",
     },
+  },
+  iconButton: {
+    color: theme.palette.color.main,
   },
 }));

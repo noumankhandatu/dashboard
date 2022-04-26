@@ -6,9 +6,12 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import Button from "../../components/buttons";
 import SearchBar from "../../components/searchbar";
 import IconCard from "../../components/iconCard";
+import OrderNft from "../../components/orderNft";
 import Array from "../../components/arrays";
 import { makeStyles } from "@material-ui/core";
+import ManageNft from "../../components/manageNft";
 import RacCard from "../../components/rcaCard/index";
+import FeatureArt from "../../components/featureArt";
 const Dashboard = () => {
   const classes = useStyles();
   return (
@@ -16,7 +19,7 @@ const Dashboard = () => {
       <MiniDrawer />
 
       <Wrapper>
-        <Box display="flex" justifyContent="space-between">
+        <Box className={classes.flexin}>
           <SearchBar />
           <Button variant="inline" endIcon={<AssessmentIcon />}>
             Report
@@ -33,8 +36,18 @@ const Dashboard = () => {
             );
           })}
         </div>
-        <br />
-        <RacCard />
+        <Box pt={5} pb={3}>
+          <RacCard />
+        </Box>
+        <Box pt={5} pb={3}>
+          <OrderNft />
+        </Box>
+        <Box pt={5} pb={3}>
+          <ManageNft />
+        </Box>
+        <Box pt={5} pb={3}>
+          <FeatureArt />
+        </Box>
       </Wrapper>
     </Box>
   );
@@ -50,8 +63,14 @@ const useStyles = makeStyles((theme) => ({
       gridTemplateColumns: "1fr",
     },
   },
+  flexin: {
+    display: "flex",
+    justifyContent: "space-between",
+    [theme.breakpoints.down("md")]: {
+      display: "block",
+    },
+  },
   bgColor: {
-    height: "100vh",
     backgroundColor: theme.palette.backgroundColor.bgColor,
   },
 }));
