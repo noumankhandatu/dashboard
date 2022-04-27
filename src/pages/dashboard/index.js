@@ -60,13 +60,19 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     gridGap: "10px",
     [theme.breakpoints.down("md")]: {
+      gridTemplateColumns: "1fr 1fr 1fr",
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr 1fr",
+    },
+    [theme.breakpoints.down("xs")]: {
       gridTemplateColumns: "1fr",
     },
   },
   flexin: {
     display: "flex",
     justifyContent: "space-between",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("xs")]: {
       display: "block",
     },
   },

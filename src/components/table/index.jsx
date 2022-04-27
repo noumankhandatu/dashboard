@@ -25,11 +25,11 @@ export default function BasicTable({
     <TableContainer className={classes.main} component={Paper}>
       <Box className={classes.tableHeading}>
         {tableName}
-        {addBtn && (
+        {/* {addBtn && (
           <Button className={classes.addBtnTitleBar} endIcon={<AddIcon />}>
             {addBtn}
           </Button>
-        )}
+        )} */}
       </Box>
       <Table className={classes.table} aria-label="simple table">
         <TableHead className="tablehead">
@@ -45,13 +45,11 @@ export default function BasicTable({
 }
 const useStyles = makeStyles((theme) => ({
   main: {
-    // width: "900px",
+    minWidth: "100%",
     margin: "auto",
     borderRadius: "8px",
     backgroundColor: theme.palette.backgroundColor.main,
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
-    },
+    [theme.breakpoints.down("sm")]: {},
   },
   table: {
     width: "100%",
