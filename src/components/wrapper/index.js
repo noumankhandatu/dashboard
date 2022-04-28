@@ -14,7 +14,7 @@ export default Wrapper;
 const useStyles = makeStyles((theme) => ({
   wraped: {
     width: "100%",
-    padding: " 0 50px 0 40px",
+    padding: " 0 70px 0 40px",
     paddingTop: "3px",
     // margin: "0 20px",
     [theme.breakpoints.down("xs")]: {
