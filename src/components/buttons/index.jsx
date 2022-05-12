@@ -45,4 +45,14 @@ export default withStyles((theme) => ({
       backgroundColor: alpha(theme.palette.backgroundColor.iconbg2, 0.9),
     },
   },
+  signIn: {
+    width: "200px",
+    borderRadius: "50px",
+    color: theme.palette.color.main,
+    backgroundColor: theme.palette.backgroundColor.btnbg,
+    height: "35px",
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.backgroundColor.btnbg, 0.9),
+    },
+  },
 }))(Button);
