@@ -25,11 +25,11 @@ export default function BasicTable({
     <TableContainer className={classes.main} component={Paper}>
       <Box className={classes.tableHeading}>
         {tableName}
-        {/* {addBtn && (
+        {addBtn && (
           <Button className={classes.addBtnTitleBar} endIcon={<AddIcon />}>
             {addBtn}
           </Button>
-        )} */}
+        )}
       </Box>
       <Table className={classes.table} aria-label="simple table">
         <TableHead className="tablehead">
