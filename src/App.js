@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+
 import { useSelector } from "react-redux";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import Routing from "./router";
@@ -20,6 +21,8 @@ function App() {
         iconbg2: mode ? "#F12B2C" : "#F12B2C",
         bgColor: mode ? "#FFFFF" : "#1B1C31",
         bgtab: mode ? "#DFE0EB" : "#222338",
+        alpha: mode ? "#F6F6F6" : "#FFFFFF",
+        btnbg: mode ? "#0660FE" : "#0660FE",
       },
       icon: {
         main: mode ? "#FFE9D" : "#FFFFFF",
