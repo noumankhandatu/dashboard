@@ -19,7 +19,7 @@ export default function LoginSection() {
         <TextField variant="outlined" placeholder="UserName" />
       </Box>
       <Box pt={2} pb={3}>
-        <TextField variant="outlined" placeholder="UserName" />
+        <TextField variant="outlined" placeholder="Password" />
       </Box>
       <Box mt={3}>
         <Link to="/dashboard">
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     width: 600,
     height: 500,
     borderRadius: "8px",
-    background: theme.palette.backgroundColor.main,
+    backgroundColor: theme.palette.backgroundColor.main,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   typo: {
-    paddingRight: 160,
+    paddingRight: 180,
     color: theme.palette.color.main,
     [theme.breakpoints.down("sm")]: {
       paddingLeft: 120,
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   ButtonSignin: {
     textTransform: "capitalize",
     fontSize: 20,
+    color: theme.palette.color.wolf,
     fontWeight: 500,
   },
 }));

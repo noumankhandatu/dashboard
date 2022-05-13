@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 20,
     fontSize: 36,
     fontweight: 500,
+    color: theme.palette.color.main,
     textTransform: "capitalize",
     [theme.breakpoints.down("sm")]: {
       fontSize: 24,
